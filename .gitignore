@@ -1,0 +1,75 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+
+# Compiled output
+crud-app/dist
+crud-app/tmp
+crud-app/out-tsc
+crud-app/bazel-out
+
+# Node
+crud-app/node_modules
+crud-app/npm-debug.log
+crud-app/yarn-error.log
+
+# IDEs and editors
+crud-app/.idea/
+crud-app/.project
+crud-app/.classpath
+crud-app/.c9/
+crud-app/*.launch
+crud-app/.settings/
+crud-app/*.sublime-workspace
+
+# Visual Studio Code
+crud-app/.vscode/*
+crud-app/!.vscode/settings.json
+crud-app/!.vscode/tasks.json
+crud-app/!.vscode/launch.json
+crud-app/!.vscode/extensions.json
+crud-app/.history/*
+
+# Miscellaneous
+crud-app/.angular/cache
+crud-app/.sass-cache/
+crud-app/connect.lock
+crud-app/coverage
+crud-app/libpeerconnection.log
+crud-app/testem.log
+crud-app/typings
+
+# System files
+crud-app/.DS_Store
+crud-app/Thumbs.db

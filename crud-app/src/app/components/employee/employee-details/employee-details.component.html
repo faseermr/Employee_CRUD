@@ -1,0 +1,28 @@
+<div class="container mt-2">
+  <div class="card">
+    <div class="card-header"><h3>Employee Details</h3></div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-1">#</th>
+          <th class="col-4">Name</th>
+          <th class="col-4">Address</th>
+          <th class="col-1">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let i = index">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.address }}</td>
+          <td>
+            <div class="btn-group">
+              <button type="button" class="btn btn-success">Edit</button>
+              <button [ngClass]="['btn', 'btn-danger']">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

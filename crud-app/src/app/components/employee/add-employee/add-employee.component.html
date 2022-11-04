@@ -1,0 +1,52 @@
+<div class="container mt-2">
+  <div class="card">
+    <div class="card-header">
+      <h3>Employee Registration</h3>
+    </div>
+    <div class="card-body">
+      <form #employee_form="ngForm" (ngSubmit)="addEmployee()">
+        <div class="m-2">
+          <label class="col-2">Name : </label>
+          <input
+            required
+            #e_name="ngModel"
+            type="text"
+            class="col-9"
+            name="employee_name"
+            [(ngModel)]="employee_name"
+          />
+          <div
+            class="text-danger"
+            [class.d-none]="e_name.valid || e_name.untouched"
+          >
+            required
+          </div>
+        </div>
+        <div class="m-2">
+          <label class="col-2">Address : </label>
+          <input
+            required
+            #e_address="ngModel"
+            type="text"
+            class="col-9"
+            name="employee_address"
+            [(ngModel)]="employee_address"
+          />
+          <div
+            class="text-danger"
+            [class.d-none]="e_address.valid || e_address.untouched"
+          >
+            required
+          </div>
+        </div>
+        <button
+          [disabled]="employee_form.form.invalid"
+          type="submit"
+          class="btn btn-primary mt-2"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
