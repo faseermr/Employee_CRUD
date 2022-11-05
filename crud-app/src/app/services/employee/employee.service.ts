@@ -14,15 +14,15 @@ export class EmployeeService {
     return this.http.get<Employee[]>(`${BaseUrl}/employee`);
   }
 
-  getById(id: number): Observable<Employee[]> {
-    return this.http.get<Employee[]>(`${BaseUrl}/employee/${id}`);
+  getById(id: number): Observable<Employee> {
+    return this.http.get<Employee>(`${BaseUrl}/employee/${id}`);
   }
 
   create(employee: Employee): Observable<Employee> {
     return this.http.post(`${BaseUrl}/employee`, employee);
   }
 
-  update(id: number, employee: Employee): Observable<Employee> {
+  update(id: any, employee: Employee): Observable<Employee> {
     return this.http.put(`${BaseUrl}/employee/${id}`, employee);
   }
 

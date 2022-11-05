@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from 'src/app/model/employee/employee.model';
 import { EmployeeService } from 'src/app/services/employee/employee.service';
 
@@ -10,7 +11,10 @@ import { EmployeeService } from 'src/app/services/employee/employee.service';
 export class EmployeeDetailsComponent implements OnInit {
   employees?: Employee[];
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(
+    private employeeService: EmployeeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getAllEmployees();
@@ -30,5 +34,9 @@ export class EmployeeDetailsComponent implements OnInit {
         this.getAllEmployees();
       });
     }
+  };
+
+  editEmployee = (id: number) => {
+    this.router.navigateByUrl(`employee/edit/${id}`);
   };
 }

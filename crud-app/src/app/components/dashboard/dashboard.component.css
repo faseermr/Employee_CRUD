@@ -1,0 +1,25 @@
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  min-width: 600px;
+  min-height: 200px;
+  width: 60%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+h1 {
+  color: chartreuse;
+}
+
+small {
+  color: crimson;
+  font-size: large;
+}
+
+h3 {
+  color: blue;
+}
