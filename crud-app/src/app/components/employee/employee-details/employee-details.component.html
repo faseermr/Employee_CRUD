@@ -1,3 +1,4 @@
+<app-add-employee [getAllEmployees]="getAllEmployees"></app-add-employee>
 <div class="container mt-2">
   <div class="card">
     <div class="card-header"><h3>Employee Details</h3></div>
@@ -18,7 +19,12 @@
           <td>
             <div class="btn-group">
               <button type="button" class="btn btn-success">Edit</button>
-              <button [ngClass]="['btn', 'btn-danger']">Delete</button>
+              <button
+                [ngClass]="['btn', 'btn-danger']"
+                (click)="deleteEmployee(employee.id!)"
+              >
+                Delete
+              </button>
             </div>
           </td>
         </tr>

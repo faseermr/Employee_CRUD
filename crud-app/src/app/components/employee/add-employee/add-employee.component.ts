@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee/employee.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  @Input() getAllEmployees: any;
   employee_name?: string;
   employee_address?: string;
 
@@ -23,13 +24,9 @@ export class AddEmployeeComponent implements OnInit {
       })
       .subscribe((res) => {
         alert('Employee Successfully Added');
+        this.employee_name = '';
+        this.employee_address = '';
         this.getAllEmployees();
       });
-  };
-
-  getAllEmployees = () => {
-    this.employeeService.getAll().subscribe((res) => {
-      console.log(res);
-    });
   };
 }

@@ -22,4 +22,13 @@ export class EmployeeDetailsComponent implements OnInit {
       // console.log(this.employees);
     });
   };
+
+  deleteEmployee = (id: number) => {
+    let option = window.confirm('Are you want to delete');
+    if (option) {
+      this.employeeService.delete(id).subscribe((res) => {
+        this.getAllEmployees();
+      });
+    }
+  };
 }
