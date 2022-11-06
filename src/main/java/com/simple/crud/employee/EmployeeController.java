@@ -1,5 +1,6 @@
 package com.simple.crud.employee;
 
+import com.simple.crud.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,9 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     ResponseEntity<Employee> getEmployee(@PathVariable("id") long id){
-        Employee employee = employeeRepositary.findById(id).orElseThrow();
+        Employee employee = employeeRepositary.findById(id).orElseThrow(
+                ()-> new ResourceNotFoundException("Not found employee with id is " + id)
+        );
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
     @PostMapping
@@ -34,7 +37,9 @@ public class EmployeeController {
     }
     @PutMapping("/{id}")
     ResponseEntity<Employee> addEmployee(@PathVariable("id")long id, @RequestBody Employee employee) {
-        Employee edit_employee = employeeRepositary.findById(id).orElseThrow();
+        Employee edit_employee = employeeRepositary.findById(id).orElseThrow(
+                ()-> new ResourceNotFoundException("Not found employee with id is " + id)
+        );
         edit_employee.setName(employee.getName());
         edit_employee.setAddress(employee.getAddress());
         employeeRepositary.save(edit_employee);
