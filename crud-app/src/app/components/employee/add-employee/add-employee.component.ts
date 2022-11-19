@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { EmployeeService } from 'src/app/services/employee/employee.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class AddEmployeeComponent implements OnInit {
   employee_name?: string;
   employee_address?: string;
 
-  addEmployee = () => {
+  addEmployee = (form: NgForm) => {
     console.log(this.employee_name, this.employee_address);
     this.employeeService
       .create({
@@ -24,8 +25,9 @@ export class AddEmployeeComponent implements OnInit {
       })
       .subscribe((res) => {
         alert('Employee Successfully Added');
-        this.employee_name = '';
-        this.employee_address = '';
+        form.reset();
+        // this.employee_name = '';
+        // this.employee_address = '';
         this.getAllEmployees();
       });
   };
