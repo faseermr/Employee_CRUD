@@ -1,0 +1,16 @@
+.pg-button {
+  float: right;
+}
+
+button {
+  width: 80px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-radius: 10px;
+}
+
+button:disabled {
+  background-color: rgba(0, 0, 0, 0.5);
+}

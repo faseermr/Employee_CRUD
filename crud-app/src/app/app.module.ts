@@ -8,9 +8,10 @@ import { EmployeeDetailsComponent } from './components/employee/employee-details
 import { AddEmployeeComponent } from './components/employee/add-employee/add-employee.component';
 import { EditEmployeeComponent } from './components/employee/edit-employee/edit-employee.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PaginationComComponent } from './components/pagination-com/pagination-com.component';
 
 @NgModule({
-  declarations: [AppComponent, EmployeeDetailsComponent, AddEmployeeComponent, EditEmployeeComponent, DashboardComponent],
+  declarations: [AppComponent, EmployeeDetailsComponent, AddEmployeeComponent, EditEmployeeComponent, DashboardComponent, PaginationComComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,10 +31,16 @@ public class EmployeeController {
         );
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
+//    @PostMapping
+//    ResponseEntity<Employee> addEmployee(@RequestBody @Valid Employee employee) {
+//        employeeRepositary.save(employee);
+//        return new ResponseEntity<>(employee, HttpStatus.CREATED);
+//    }
+
     @PostMapping
-    ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+    Employee addEmployee(@RequestBody @Valid Employee employee) {
         employeeRepositary.save(employee);
-        return new ResponseEntity<>(employee, HttpStatus.CREATED);
+        return employee;
     }
     @PutMapping("/{id}")
     ResponseEntity<Employee> addEmployee(@PathVariable("id")long id, @RequestBody Employee employee) {

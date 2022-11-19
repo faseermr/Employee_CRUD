@@ -10,7 +10,8 @@ import { EmployeeService } from 'src/app/services/employee/employee.service';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employees?: Employee[];
-
+  indexFirst = 0;
+  indexLast = 5;
   constructor(
     private employeeService: EmployeeService,
     private router: Router
@@ -18,6 +19,7 @@ export class EmployeeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllEmployees();
+    console.log(this.indexFirst, this.indexLast);
   }
 
   getAllEmployees = () => {
@@ -39,4 +41,23 @@ export class EmployeeDetailsComponent implements OnInit {
   editEmployee = (id: number) => {
     this.router.navigateByUrl(`employee/edit/${id}`);
   };
+
+  updateIndexFirst = (x: number) => {
+    this.indexFirst = x;
+    //console.log('first :', x);
+  };
+  updateIndexLast = (y: number) => {
+    this.indexLast = y;
+    //console.log(y);
+  };
+  // prevBtn = () => {
+  //   this.indexFirst -= 5;
+  //   this.indexLast -= 5;
+  //   console.log(this.indexFirst, this.indexLast);
+  // };
+  // nextBtn = () => {
+  //   this.indexFirst += 5;
+  //   this.indexLast += 5;
+  //   console.log(this.indexFirst, this.indexLast);
+  // };
 }

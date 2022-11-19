@@ -14,7 +14,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employees; let i = index">
+        <tr
+          *ngFor="
+            let employee of employees | slice: indexFirst:indexLast;
+            let i = index
+          "
+        >
           <td>{{ employee.id }}</td>
           <td>{{ employee.name }}</td>
           <td>{{ employee.address }}</td>
@@ -38,5 +43,18 @@
         </tr>
       </tbody>
     </table>
+    <app-pagination-com
+      [indexFirst]="indexFirst"
+      [indexLast]="indexLast"
+      [listLength]="employees?.length"
+      (changeIndexFirst)="updateIndexFirst($event)"
+      (changeIndexSecond)="updateIndexLast($event)"
+    ></app-pagination-com>
+    <!-- <div class="btn-group">
+      <button (click)="prevBtn()" [disabled]="indexFirst == 0">Prev</button>
+      <button (click)="nextBtn()" [disabled]="indexLast > employees!.length">
+        Next
+      </button>
+    </div> -->
   </div>
 </div>
