@@ -43,7 +43,7 @@ public class EmployeeController {
         return employee;
     }
     @PutMapping("/{id}")
-    ResponseEntity<Employee> addEmployee(@PathVariable("id")long id, @RequestBody Employee employee) {
+    ResponseEntity<Employee> editEmployee(@PathVariable("id")long id, @RequestBody Employee employee) {
         Employee edit_employee = employeeRepositary.findById(id).orElseThrow(
                 ()-> new ResourceNotFoundException("Not found employee with id is " + id)
         );
